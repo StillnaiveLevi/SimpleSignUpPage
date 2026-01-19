@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
 
 
 
-app.use('/signup', appRoutes);
+app.use('/', appRoutes);
 
 
 
