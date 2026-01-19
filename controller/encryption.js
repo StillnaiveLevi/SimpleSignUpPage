@@ -1,26 +1,29 @@
-function encryption(text, rails = 2, minLength = 0, filler = 'X') {
-    if (rails <= 1) return text;
+function encryption(password, rails = 2) {
+    if (rails <= 1) return password;
 
    
-    if (text.length < minLength) {
-        text += filler.repeat(minLength - text.length);
+    while (password.length < rails) {
+        password += 'X';
     }
 
+   
     let fence = Array.from({ length: rails }, () => []);
     let rail = 0;
-    let direction = 1;
+    let direction = 1; 
 
-    for (let char of text) {
+   
+    for (let char of password) {
         fence[rail].push(char);
         rail += direction;
 
+       
         if (rail === rails - 1 || rail === 0) {
             direction *= -1;
         }
     }
 
+    
     return fence.flat().join('');
 }
 
-
-module.exports =encryption;
+module.exports = encryption;
