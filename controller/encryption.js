@@ -1,5 +1,10 @@
-function encryption(text, rails = 2) {
+function encryption(text, rails = 2, minLength = 0, filler = 'X') {
     if (rails <= 1) return text;
+
+   
+    if (text.length < minLength) {
+        text += filler.repeat(minLength - text.length);
+    }
 
     let fence = Array.from({ length: rails }, () => []);
     let rail = 0;
@@ -16,5 +21,6 @@ function encryption(text, rails = 2) {
 
     return fence.flat().join('');
 }
+
 
 module.exports =encryption;
