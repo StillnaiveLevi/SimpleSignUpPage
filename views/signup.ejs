@@ -67,9 +67,22 @@
         button:hover {
             background: #0056b3;
         }
+       nav {
+          position: absolute; 
+          top: 10px;         
+          right: 10px;        
+        }
+
+        nav a {
+        text-decoration: none;
+        color: #000;           
+        font-weight: bold;
+        font-size: 20px;     
+        }
     </style>
 </head>
 <body>
+    <nav><a href="/login">Login</a></nav>
     <fieldset>
       <legend>SignUp</legend>
         <form action="/" method="POST">
@@ -78,6 +91,12 @@
 
             <label>Username:</label><br>
             <input type="text" name="username" required><br><br>
+
+            <label>Email:</label><br>
+            <input type="text" name="email" required><br><br>
+
+            <label>Phone-Number:</label><br>
+            <input type="number" name="phone" required><br><br>
 
             <label>Password:</label><br>
             <input type="password" name="password" required><br><br>

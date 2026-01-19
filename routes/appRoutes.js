@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const appController = require('../controller/appController');
+const signupController = require('../controller/signupController');
+const loginController = require('../controller/loginController');
 
-router.get('/', appController.signupForm);
-router.post('/', appController.postForm);
+router.get('/', signupController.signupForm);
+router.post('/', signupController.postForm);
+
+router.get('/login', loginController.loginForm);
+router.post('/login', loginController.postLogin);
+
 
 
 
